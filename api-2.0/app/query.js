@@ -49,10 +49,15 @@ const query = async (channelName, chaincodeName, args, fcn, username, org_name) 
                 result = await contract.evaluateTransaction('SmartContract:'+fcn, args[0]);
                 break;
             case "GetHistoryForAsset":
+	    case "GetHistoryForEmployee":
             case "GetCarById":
                 console.log("=============")
                 result = await contract.evaluateTransaction(fcn, args[0]);
                 break;
+	    case "ReadEmployee":
+		console.log("=======READEMPLOYEE")
+		result = await contract.evaluateTransaction(fcn, args[0]);
+		break;
             default:
                 break;
         }

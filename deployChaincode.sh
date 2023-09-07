@@ -46,7 +46,7 @@ setGlobalsForPeer0Org3(){
 
 presetup() {
     echo Vendoring Go dependencies ...
-    pushd ./artifacts/src/github.com/fabcar/go
+    pushd ./artifacts/src/github.com/employee1/go
     GO111MODULE=on go mod vendor
     popd
     echo Finished vendoring Go dependencies
@@ -57,8 +57,8 @@ CHANNEL_NAME="mychannel"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
 SEQUENCE="1"
-CC_SRC_PATH="./artifacts/src/github.com/fabcar/go"
-CC_NAME="fabcar"
+CC_SRC_PATH="./artifacts/src/github.com/employee1/go"
+CC_NAME="employee1"
 
 packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz

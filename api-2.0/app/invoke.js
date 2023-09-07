@@ -53,7 +53,7 @@ const invokeTransaction = async (channelName, chaincodeName, fcn, args, username
             case "CreatePrivateDataImplicitForOrg1":
             case 'ABACTest':
             case 'CreateContract':
-            case "CreateCar":
+            case "CreateEmployee":
                 result = await contract.submitTransaction(fcn, args[0]);
                 result = {txid: result.toString()}
                 break;
@@ -62,6 +62,16 @@ const invokeTransaction = async (channelName, chaincodeName, fcn, args, username
                 result = await contract.submitTransaction('SmartContract:'+fcn, args[0], args[1]);
                 result = {txid: result.toString()}
                 break;
+	    case "UpdateEmployee":
+		console.log("=========UpdateEmployee")
+		result = await contract.submitTransaction('SmartContract:'+fcn, args[0], args[1], args[2], args[3]);
+		result = {txid: result.toString()}
+		break;
+	    case "DeleteEmployee":
+		console.log("===========DeleteEmployee")
+		result = await contract.submitTransaction('SmartContract:'+fcn, args[0]);
+		result = {txid: result.toString()}
+		break;
             case "CreateDocument":
                 result = await contract.submitTransaction('DocumentContract:'+fcn, args[0]);
                 console.log(result.toString())
